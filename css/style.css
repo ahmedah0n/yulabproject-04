@@ -1,0 +1,628 @@
+@import url('softReset.css');
+@import url('fonts.css');
+
+:root {  
+	--colorBlackText: #413D4B; 
+	--colorBlackText80: rgba(65,19,75,0.8);
+	--colorBlackText70: rgba(65,19,75,0.7);
+	--colorWhiteText: rgb(255, 255, 255);
+	--colorWhiteText80: rgba(255,255,255,0.8); 
+	--colorWhiteText70: rgba(255,255,255,0.7);
+	--colorturquoiseText: #00E0D0;
+	--colorBlack50border: rgba(0,0,0,0.5);
+}
+
+h1 {
+	font-family: PlayFair;
+	font-weight: 900;
+	font-size: 2rem; 
+	color: var(--colorWhiteText);
+}
+
+h2 {
+	font-family: PlayFair;
+	font-weight: 700;
+	font-size: 1.375rem; 
+	text-transform: uppercase;
+}
+
+h3 {
+	font-family: PlayFair;
+	font-weight: 400;
+	font-size: 0.875rem;  
+}
+
+h4 {
+	font-family: Robo;
+  font-weight: 900;
+	font-size: 0.875rem;
+	text-transform: uppercase;
+}
+
+p {
+	font-family: Robo;
+    font-weight: 200;
+	font-size: 0.875rem;
+	line-height: 1.2rem;
+	padding-bottom: 1.2rem;
+}
+
+a{
+	text-decoration: none;
+	color: var(--colorWhiteText);	
+}
+
+button{
+	background: none;
+	color: var(--colorturquoiseText);
+	border: solid 1px var(--colorturquoiseText);
+	text-transform: uppercase;
+	padding: 1em;
+}
+
+*::placeholder, textarea {
+	font-family: Robo;
+	font-size: 0.875rem;
+}
+
+header{
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.logo{
+	padding: 0;
+	margin: 0;
+	display: flex;
+	padding: 0;
+}
+
+.logoText{
+	color: var(--colorturquoiseText);
+	font-family: Sailec;
+	font-size: 1.5rem;
+	padding-left: 0.3rem;
+}
+
+#hero{
+display: flex;
+justify-content: center;
+}
+
+#hero h2, #hero p, .emptyBorder{
+	padding-bottom: 2rem;
+}
+
+#hero button{
+	margin-bottom: 8%;
+}
+
+#hero p{
+	padding-left:  8%;
+	padding-right: 8%;
+}
+
+.emptyBorder{
+	border-bottom: solid turquoise 1px;
+	width: 50px;
+	margin-bottom: 2rem;
+}
+
+.headerHeroBG{
+
+	background: no-repeat center / cover url("../images/bgk-header.png");	
+}
+
+
+header ul{
+	display: flex;
+	list-style: none;
+}
+
+
+header ul a {
+	font-family: Robo; 
+	font-weight: 900;
+	font-size: 0.875rem; 
+	color: var(--colorWhiteText);
+	text-decoration: none;
+	padding-left: 1rem;
+	font-weight: bold;
+	text-transform: uppercase;
+
+}
+
+header ul a:hover {
+	color: var(--colorturquoiseText);
+}
+
+#hero>*:first-child{
+	color: var(--colorWhiteText);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+
+#ourStory{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+#ourStory figure{
+	padding: 0.5rem 10% 0 5%;
+}
+
+#ourStoryDescr{
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+	text-align: left;
+	color: var(--colorBlackText);
+}
+
+#ourStoryVideo{
+height: 100px;
+background-color: black;
+}
+
+#ourStoryDescr>h2{
+	padding-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+	#ourStory>:first-child{
+		flex-direction: column;
+		flex-wrap: wrap;
+	}
+
+	#ourStoryDescr{
+	align-items: center;
+	}
+}
+
+
+
+#video {
+	display: flex;
+	justify-content: center;
+	background: no-repeat center / cover url("../design-assets/bgk-middle.png");
+}
+
+#video >div {
+	height: 40rem; 
+	flex-direction: column;
+	justify-content: space-around; 
+	align-content: center;
+	display: flex; 
+	color: var(--colorWhiteText80); 
+	text-align: center; 
+	}
+
+#video img {
+	margin: 2rem; 
+}
+
+#expertise {
+	display: flex; 
+	justify-content: center;
+}
+   
+#expertise > div {
+    padding-top: 5rem; 
+    display: flex;
+	flex-direction: column;
+	color: var(--colorBlackText);
+	
+}
+
+#expertiseContainer {
+	margin-top: 2rem;
+	margin-bottom: 5rem;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 250px 250px;
+	justify-content: center;
+	color: var(--colorBlackText);
+}
+
+/* Erklärung 
+Jedes Element außer die in der ersten Spalte bekommen ein border links*/
+
+#expertiseContainer>:nth-child(n){
+	border-left: solid var(--colorBlack50border) 1px;
+}
+/* Hier habe ich die jeweils erste Spalte reihe ausgeschlossen.
+3n da es 3spalten sind +1 weil es mit der ersten anfängt*/
+
+#expertiseContainer>:nth-child(3n+1){
+	border-left: none;
+}
+
+/*
+Ab der zweitel spalte bekommen alle Boxen eine Border nach oben.*/
+
+#expertiseContainer>:nth-child(n+4){
+	border-top: solid var(--colorBlack50border) 1px;
+}
+
+@media (max-width: 992px) {
+
+	#expertiseContainer>:nth-child(n){
+		border-left: solid  var(--colorBlack50border) 1px;
+	}
+	#expertiseContainer>:nth-child(2n+1){
+		border-left: none;
+	}
+	#expertiseContainer>:nth-child(n+3){
+		border-top: solid  var(--colorBlack50border) 1px;
+	}
+}
+
+/*Nth child ist etwas kompliziert. Aber theoretisch würde das jetzt super klappen wenn wir noch mehr hinzufügen.
+das würde ganz automatisch passieren*/
+
+
+.box {
+	
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	padding: 2em;
+}
+
+hr {
+	width: 4rem; 
+	align-self: center;
+	margin: 1rem;  
+}
+
+.mainMargin {
+	width: 940px;
+	align-content: center;
+	display: flex;
+	text-align: center;
+	padding: 3rem 1rem;
+}
+
+/* exception to the mainMargin */
+.headerMargin{
+	padding-top: 1rem;
+	justify-content: space-between;
+}
+
+.footerMargin{
+	padding-bottom: 1rem;
+	}
+
+#team {
+	background-image: url('../images/bgk-header.png');
+	background-position: center;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+		padding-top: 1rem; 
+
+}
+
+	#team > div {
+		flex-direction: column;
+		color: var(--colorWhiteText);
+	}
+
+	#team .stuff {
+		display: flex;
+		justify-content: space-between; 
+		gap: 1rem; 
+		padding: 2rem 0rem; 
+	}
+
+	#team figure {
+		flex: 1; 
+		border: 1px solid var(--colorWhiteText70); 
+	}
+
+	#team figure img {
+		width: 100%; 
+		background-color: var(--colorWhiteText);  
+	}
+
+	#team figcaption {
+		font-family: Robo;
+		font-weight: 300;
+		font-size: 0.8125rem; 
+		padding: 1rem;
+		text-transform: uppercase; 
+	}
+
+	#team figcaption:first-line {
+		font-weight: 900;
+		font-size: 0.875rem; 
+	}
+
+	#team p {
+		margin-top: 2rem; 
+		margin-bottom: 1rem; 
+	}
+
+	#team button {
+		width: fit-content;
+		align-self: center; 
+	}
+
+#contact {
+	display: flex;
+	justify-content: center;
+	padding-top: 2rem; 
+	padding-bottom: 2rem; 
+}
+
+#contact h2 {
+	padding-bottom: 1rem; 
+}
+
+	#contact h2 {
+		text-align: left; 
+		color: var(--colorBlackText);
+		
+	}
+
+	#contact form {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+	}
+
+	#contact form input, textarea {
+		margin: 0.5rem 0rem;
+		padding: 0.5rem; 
+		border: 1px solid #e2e2e2; 
+	}
+
+	#contact form button {
+		padding: 0.5rem 2rem; 
+	}
+
+	#contact form textarea {
+		flex: 1;
+	}
+
+	#contact form button {
+		width: fit-content;
+	}
+
+#contact article {
+	flex: 1; 
+}
+
+#contact > .mainMargin {
+	gap: 5rem; 
+}
+
+	#contact article .logoList {
+		width: 100%;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+		align-items: center; 
+		justify-content: space-between; 
+	}
+
+	#contact article .logoList div {
+		text-align: center; 
+	}
+
+	#contact article ul {
+		display: flex; 
+		flex-direction: column; 
+		}
+
+	#contact article ul li {
+		list-style-type: none; 
+		line-height: 5rem; 
+		text-align: center; 
+	}
+
+		#contact article object {
+			vertical-align: middle; 
+		}
+
+/* X-Small devices (portrait phones) */
+@media (max-width: 576px), (orientation: portrait) {
+}
+
+/* Small devices (landscape phones) */
+@media (max-width: 768px){
+	#team div {
+		display: flex;
+		padding: 2rem;
+		flex-direction: column;
+	}
+
+	#team figure {
+		display: flex;
+	}
+
+		#team figure img {
+			height: 5rem;
+			width: auto; 
+		}
+
+		#team figure figcaption {
+			width: 100%; 
+		}
+}
+
+/* Medium devices (tablets) */
+@media (max-width: 992px) {
+
+	#expertiseContainer {
+
+		grid-template-columns: 1fr 1fr;
+		
+	}
+	
+	
+}
+
+/* Large devices (desktops) */
+@media (max-width: 1200px) {
+}
+
+/* X-Large devices (large desktops) */
+@media (max-width: 1400px) {
+}
+
+/*           Geralds Chaos    */
+
+#footer{
+background: no-repeat center / cover url("../design-assets/bgk-footer.png");
+color: white;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+ #footer h3, #footer h4{
+	padding-bottom: 3rem;
+	display: flex;
+	align-items: center;
+}
+
+
+#footer a{
+	font-family: Robo;
+	font-weight: 100;
+}
+
+.logo{
+	padding-bottom: 2rem;
+}
+
+
+#footer p{
+	padding-bottom: 1rem;
+	text-align: left;
+}
+
+#footer>article:first-child{
+ display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 2rem;
+}
+
+
+#footer button{
+	background-color: rgba(255,255,255,0.6);
+	border: none;
+	height: 2.5rem;
+	width: 4rem;
+}
+
+#footer fieldset{
+    display: flex;
+    border: none;
+	padding-bottom: 1rem;
+}
+
+#footer fieldset>*:nth-child(2){
+    margin-left: 0.3rem;
+}
+#footer input{
+    background: none;
+    border: solid white 0.5px;
+	color: white;
+	width: 15rem;
+    height: 3em;
+    margin: 0;
+    padding: 0 0 0 0.8rem;
+}
+
+#footer input::placeholder{
+	opacity: 1;
+}
+
+
+.footersymbols li{
+	padding-right: 0.5rem;
+}
+
+#footer ul{
+    display: flex;
+    list-style: none;
+
+}
+
+.stayInTouch{
+	display: flex;
+	flex-direction: column;
+}
+
+.tableGrid{
+	display: inline-grid;
+	grid-template-columns: 2rem 1fr;
+}
+
+.tableGrid h4{
+	grid-column: 1 / 2 span;
+	display: flex;
+	align-items: center;
+}
+
+.footerNav{
+	justify-content: space-between;
+}
+
+.footerNav li{
+	padding-right: 2rem;
+}
+
+
+/* X-Small devices (portrait phones) */
+@media (max-width: 576px), (orientation: portrait) {
+	
+#footer>article:first-child{
+		display: flex;
+		padding: 2rem;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+
+}
+
+
+/* Small devices (landscape phones) */
+@media (max-width: 768px) {
+	
+#footer>article:first-child{
+		display: flex;
+		padding: 2rem;
+		flex-direction: column;
+	}
+
+}
+
+#footer h4{
+	text-align: left;
+	padding-top: 0.5rem;
+}
+
+/* Medium devices (tablets) */
+@media (max-width: 992px) {
+}
+
+/* Large devices (desktops) */
+@media (max-width: 1200px) {
+}
+
+/* X-Large devices (large desktops) */
+@media (max-width: 1400px) {
+}
